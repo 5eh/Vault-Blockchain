@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Frontier EVM Test</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0/web3.min.js"></script>
+    </head>
+    <body>
+        <h1>Frontier EVM Test</h1>
+        <button id="testBtn">Test Connection</button>
+        <button id="deployBtn">Deploy Simple Contract</button>
+        <div id="result"></div>
+
+        <script>
+            // Prevent extension interference
+            window.addEventListener("load", function () {
+                const web3 = new Web3("http://localhost:9944");
+                const result = document.getElementById("result");
+
+                // Alice's private key (development only!)
+                const alicePrivateKey =
+                    "e5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a";
+                const account = web3.eth.accounts.privateKeyToAccount(
+                    "0x" + alicePrivateKey,
+                );
+                web3.eth.accounts.wallet.add(account);
+
+                document
+                    .getElementById("testBtn")
+                    .addEventListener("click", async function () {
+                        try {
+                            const chainId = await web3.eth.getChainId();
+                            const balance = await web3.eth.getBalance(
+                                account.address,
+                            );
+                            result.innerHTML = `
+                        ✅ Connection Success!<br>
+                        Chain ID: ${chainId}<br>
+                        Alice Address: ${account.address}<br>
+                        Alice Balance: ${web3.utils.fromWei(balance, "ether")} DEV
+                    `;
+                        } catch (error) {
+                            result.innerHTML =
+                                "❌ Connection Error: " + error.message;
+                        }
+                    });
+
+                document
+                    .getElementById("deployBtn")
+                    .addEventListener("click", async function () {
+                        try {
+                            result.innerHTML = "⏳ Deploying contract...";
+
+                            // Very simple contract bytecode (empty contract)
+                            const bytecode =
+                                "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122030d1f67d8b85b8f1c1d4f5b3b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b864736f6c63430008130033";
+
+                            const tx = {
+                                from: account.address,
+                                data: bytecode,
+                                gas: 200000,
+                                gasPrice: "1000000000",
+                            };
+
+                            const receipt = await web3.eth.sendTransaction(tx);
+
+                            result.innerHTML = `
+                        🎉 Contract Deployed Successfully!<br>
+                        Transaction Hash: ${receipt.transactionHash}<br>
+                        Block Number: ${receipt.blockNumber}<br>
+                        Contract Address: ${receipt.contractAddress}<br>
+                        Gas Used: ${receipt.gasUsed}
+                    `;
+                        } catch (error) {
+                            result.innerHTML =
+                                "❌ Deploy Error: " + error.message;
+                        }
+                    });
+            });
+        </script>
+    </body>
+</html>

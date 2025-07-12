@@ -1,0 +1,34 @@
+# Frontier Client
+fc-api = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-cli = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fc-consensus = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-db = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fc-mapping-sync = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fc-rpc = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fc-rpc-core = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-rpc-v2 = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-rpc-v2-api = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-rpc-v2-types = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+fc-storage = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+# Frontier Primitive  
+fp-account = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-consensus = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-dynamic-fee = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-ethereum = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-evm = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-rpc = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-self-contained = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+fp-storage = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+# Frontier FRAME
+pallet-base-fee = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-dynamic-fee = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-ethereum = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm-chain-id = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm-precompile-modexp = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm-precompile-sha3fips = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm-precompile-simple = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+pallet-evm-test-vector-support = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09" }
+pallet-hotfix-sufficients = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
+# Frontier Utility
+precompile-utils = { git = "https://github.com/polkadot-evm/frontier.git", tag = "monthly-2024-09", default-features = false }
