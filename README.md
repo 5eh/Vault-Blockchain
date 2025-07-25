@@ -1,7 +1,7 @@
 # Arthur Labs
 
 <p align="center">
-  <img src="path/to/your/arthur_labs_logo.png" alt="Arthur Labs Logo" width="150">
+    <img src="Logo.png" alt="Arthur Labs Logo" width="150">
 </p>
 
 ---
